@@ -10,43 +10,25 @@ import MenuItem from 'material-ui-next/Menu/MenuItem';
 import TextField from 'material-ui/TextField';
 import { connect } from 'react-redux';
 import { addWatchlist, deleteWatchlist, clearWatchlists } from './actions';
-
+import Paper from 'material-ui-next/Paper';
+import Grid from 'material-ui-next/Grid';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             query: '',
-            fastsuggestions: [{"Title":"Search or N/A"}],
+            fastsuggestions: [],
             movie:''
            
         }
         
     }
-    addWatchlist() {
-    this.props.addWatchlist(this.state.query);
-  }
 
-
-  renderWatchlists() {
-    const { watchlists } = this.props;
-    return (
-      <ul className="list-group col-sm-4">
-        {
-          watchlists.map(watchlist => {
-            return (
-              <li key={watchlist.id} className="list-group-item">
-                <div className="list-item">
-                  <div>{watchlist.query}</div>
-                </div>
-                
-              </li>
-            )
-          })
-        }
-      </ul>
-    )
-  }
+    emptysuggestion() {
+        this.setState({fastsuggestions : []});
+        
+    }
     
     fastsearch(event) {
         if (this.state.query !== null){
@@ -77,34 +59,38 @@ class App extends Component {
     render() {
         
         return(
-            <div>
-            <MuiThemeProvider>
             
-                <div>
+            <div>
+            
+                <MuiThemeProvider>
+                <Grid container spacing={24}>
+                    <Grid item xs>
                     
-                      
+                    </Grid>
+                <Grid item xs={6}>
+                
+  
+            
+            <div>  
                     <TextField placeholder="Search"
                         
                         onChange={event => {this.setState({query: event.target.value},function () {
                         this.fastsearch();})}}
                         />
-                    
-                    
                 </div>
-                <div className="Profile">
-                    <div>{this.state.Title}</div>
-                    
-                </div>
+             
                 <div>
-                    <button
-            type="button"
-            className="btn btn-success"
-            onClick={() => this.addWatchlist()}
-          >
-            Add Watchlist
-          </button>
+                    
+            <div onClick={() => this.emptysuggestion()}>
             <Suggestion suggestions={this.state.fastsuggestions} />
             </div>
+            </div>
+        </Grid>
+            <Grid item xs>
+                
+                    </Grid>
+                </Grid>
+ 
             </MuiThemeProvider>
             </div>
             
@@ -113,12 +99,5 @@ class App extends Component {
     
 }
 
-function mapStateToProps(state) {
-    console.log(state,'state');
-  return {
-    
-    watchlists: state
-  }
-}
 
-export default connect(mapStateToProps, { addWatchlist })(App);
+export default App;

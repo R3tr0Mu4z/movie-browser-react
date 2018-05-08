@@ -3,8 +3,7 @@ import Movie from './Movie';
 
 import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
-import Subheader from 'material-ui/Subheader';
-import Divider from 'material-ui/Divider';
+
 import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
@@ -44,6 +43,7 @@ class Suggestion extends Component {
     rmlist(event) {
         let {suggestions} = [];
     }
+    
     render() {
         
         let  {suggestions}  = this.props;
@@ -55,28 +55,26 @@ class Suggestion extends Component {
         
         return (
             <div>
-            <Grid container spacing={8}>
-                <Grid item xs={12} sm={4}>
+ 
                 <List>
                     
                {suggestions.map((suggest, k) => {
                     return (
-                        <div key={k} onClick={() => this.setState({movieid: suggestions[k].imdbID})}>
+                        <div key={k} onMouseOver={() => this.setState({movieid: suggestions[k].imdbID})}>
                         <ListItem
+                            onClick={() => this.movie()}
                             primaryText={suggestions[k].Title}
                             leftAvatar={<Avatar src={suggestions[k].Poster} />}
-                            rightIcon={<CommunicationChatBubble />}
+                            
                           />
                         </div>
      
                     )
                 })}
                 </List>
-            </Grid>
-            <Grid item xs={12} sm={8}>
+         
               <Movie movies={this.state.moviej} />
-            </Grid>
-            </Grid>
+      
             </div>
         )
        
