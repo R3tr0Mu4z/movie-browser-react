@@ -23,3 +23,5 @@ cd movie-browser-react
 npm install
 
 yarn add material-ui-next@npm:material-ui@next
+
+npm start
