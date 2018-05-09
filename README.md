@@ -1,4 +1,4 @@
-![](https://im2.ezgif.com/tmp/ezgif-2-b08fa5e52e.gif)
+![](https://i.imgur.com/sH0JiLl.gif)
 
 Features of the application : 
 
