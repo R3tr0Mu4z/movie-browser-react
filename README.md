@@ -17,6 +17,7 @@ Material UI
 Installation 
 ```
 $ git clone https://github.com/smuaz1998/movie-browser-react.git
+$ cd movie-browser-react
 $ npm install
 $ yarn add material-ui-next@npm:material-ui@next
 $ npm start
