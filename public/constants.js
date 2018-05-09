@@ -1,1 +1,0 @@
-export const ADD_WATCHLIST = 'ADD_WATCHLIST'
