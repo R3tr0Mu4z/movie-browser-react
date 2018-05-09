@@ -12,6 +12,7 @@ Feature to add watchlist using Redux.
 
 Uses sfcookies from Redux to save watchlist as cookies
 
+Material UI
 
 Installation 
 ```
