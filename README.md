@@ -2,17 +2,12 @@
 
 Features of the application : 
 
-Built using React JS
-
-Browses movies using the OMDb API
-
-Shows information on movie
-
-Feature to add watchlist using Redux. 
-
-Uses sfcookies to save watchlist as cookies
-
-Material UI
+⋅⋅*Built using React JS
+⋅⋅*Browses movies using the OMDb API
+⋅⋅*Shows information on movie
+⋅⋅*Feature to add watchlist using Redux. 
+⋅⋅*Uses sfcookies to save watchlist as cookies
+⋅⋅*Material UI
 
 Installation 
 ```
